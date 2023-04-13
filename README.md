@@ -7,6 +7,8 @@ https://www.datalad.org/
 mamba create -n dataladENV datalad -y <br>
 conda activate dataladENV <br>
 
+# THIS IS NOT SARCASM - check out openneuro
+https://openneuro.org/
 
 # Pulling data with Datalad
 datalad install https://github.com/OpenNeuroDatasets/ds004215.git <br>
@@ -31,6 +33,9 @@ datalad save <br>
 
 ## Combining Code with datalad  -- this is a suboptimal test (code would typically be a git repo already and can be synced independently)
 git submodule add https://github.com/jstout211/datalad_examples.git code <br>
+datalad status <br>
+datalad save <br>
+
 echo '#!/bin/bash' > ./code/testcode.sh <br>
 echo 'for i in ./data/*; do fname=$(basename ${i}); cp ${i} ./data/NEW_${fname} ; done' >> ./code/testcode.sh <br>
 chmod +x ./code/testcode.sh <br>
