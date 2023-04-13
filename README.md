@@ -21,7 +21,6 @@ git checkout 1.0.2 <br>
 # Datalad storage for new data
 mkdir TESTdatalad  <br>
 cd TESTdatalad <br>
-mkdir code <br>
 mkdir data <br>
 cp $(locate *.nii | head -2) ./data  <br>
 ls ./data <br><br>
@@ -31,6 +30,7 @@ datalad status <br>
 datalad save <br>
 
 ## Combining Code with datalad  -- this is a suboptimal test (code would typically be a git repo already and can be synced independently)
+git submodule add https://github.com/jstout211/datalad_examples.git code
 echo '#!/bin/bash' > ./code/testcode.sh <br>
 echo 'for i in ./data/*; do fname=$(basename ${i}); cp ${i} ./data/NEW_${fname} ; done' >> ./code/testcode.sh <br>
 chmod +x ./code/testcode.sh <br>
