@@ -2,23 +2,33 @@
 Full website for much better examples and documentation <br>
 https://www.datalad.org/
 
+# What is Datalad
+Datalad is a mix of git and git-annex <br>
+Git has trouble with large datasets.  A hash is performed on each file, and results in a unique result <br>
+This hashing is slow on larger files, so git-annex was created.  This creates symlinks to the data, which can be locked/unlocked for changes. <br>
+Datalad is an easy wrapper around this, with upload/download features to major storage companies AWS/OpenNeuro/...
 
 ## Create an environment and install datalad
-mamba create -n dataladENV conda-forge::datalad -y <br>
-conda activate dataladENV <br>
+```
+# If mamba is not installed::  conda install -n base mamba -y 
+mamba create -n dataladENV conda-forge::datalad -y 
+conda activate dataladENV 
+```
 
 # THIS IS NOT SARCASM - check out openneuro
 https://openneuro.org/
 
-# Pulling data with Datalad
-datalad install https://github.com/OpenNeuroDatasets/ds004215.git <br>
-cd ds004215 <br>
-find ./ -name '*T1w.nii.gz'    #Pull all the T1s <br>
-datalad get $(find ./ -name '*T1w.nii.gz') <br>
+# Pulling some example data with Datalad
+```
+datalad install https://github.com/OpenNeuroDatasets/ds004215.git
+cd ds004215 
+find ./ -name '*T1w.nii.gz'    #Pull all the T1s 
+datalad get $(find ./ -name '*T1w.nii.gz') 
 
 ## Look at different versions of the data
-git tag   # List the different versions <br>
-git checkout 1.0.2 <br>
+git tag   # List the different versions 
+git checkout 1.0.2 
+```
 
 # Datalad storage for new data
 ```
@@ -57,23 +67,28 @@ datalad save
 ```
 
 ## Run your code 
-./code/testcode.sh <br>
-<br>
-#The datalad repository has now changed <br>
-datalad status <br>
+```
+./code/testcode.sh 
+
+#The datalad repository has now changed 
+datalad status 
+
 #Now the code and new data will be saved together
-datalad save <br><br>
+datalad save 
 
 ## What if I want to go back to a previous version of the data
-git log <br>
-git checkout ----- <br>
+git log 
+git checkout ----- 
+```
 
 
 ## Datalad Unlock
-cd data <br>
-ls -a <br>
-datalad unlock * <br>
-ls -a <br>
+```
+cd data 
+ls -a 
+datalad unlock * 
+ls -a 
+```
 
 ## Python interface
 These can be embedded into your code, so that the outputs can be saved at runtime <br>
@@ -91,13 +106,15 @@ dl.get('./TEST_DATA')
 ## Upload to a git server (NOT GITHUB)
 datalad siblings-create
 
-## Remove datalad tracking 
-ls -a <br>
+## Remove datalad tracking
+```
+ls -a 
 
 datalad unlock   ## This has to be done or you will remove all of your data  <br>
-rm -rf .git*  .datalad* <br><br>
+rm -rf .git*  .datalad* 
 
-Now you are back to just a regular dataset (no datalad tracking) <br>
+Now you are back to just a regular dataset (no datalad tracking)
+```
 
 # Reproducible usage for other purposes --- automated test data
 https://github.com/nih-megcore/TEST_ctf_data
