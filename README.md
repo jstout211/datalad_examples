@@ -29,7 +29,7 @@ datalad save <br>
 
 ## Combining Code with datalad
 echo '#!/bin/bash' > ./code/testcode.sh <br>
-echo 'for i in ../data/*; do cp ../data/${i} ../data/NEW_${i} ; done' >> ./code/testcode.sh <br>
+echo 'for i in ../data/*; do cp ./data/${i} ./data/NEW_${i} ; done' >> ./code/testcode.sh <br>
 chmod +x ./code/testcode.sh <br>
 
 ## Upload to a git server (NOT GITHUB)
