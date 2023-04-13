@@ -4,7 +4,7 @@ https://www.datalad.org/
 
 
 ## Create an environment and install datalad
-mamba create -n dataladENV datalad -y <br>
+mamba create -n dataladENV conda-forge::datalad -y <br>
 conda activate dataladENV <br>
 
 # THIS IS NOT SARCASM - check out openneuro
