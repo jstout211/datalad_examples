@@ -45,7 +45,7 @@ datalad create --force
 datalad status 
 datalad save 
 ```
-## Combining Code with datalad  -- this is a suboptimal test (code would typically be a git repo already and can be synced independently)
+## Combining Code with datalad
 ```
 git submodule add https://github.com/jstout211/datalad_examples.git code 
 datalad status 
