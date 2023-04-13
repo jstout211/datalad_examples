@@ -42,7 +42,7 @@ datalad save <br>
 ## Run your code
 ./code/testcode.sh <br>
 <br>
-The datalad repository has now changed <br>
+#The datalad repository has now changed <br>
 datalad status <br>
 datalad save <br>
 
