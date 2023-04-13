@@ -27,12 +27,12 @@ datalad create --force  <br>
 datalad status <br>
 datalad save <br>
 
-## Combining Code with datalad
+## Combining Code with datalad  -- this is a suboptimal test (code would typically be a git repo already and can be synced independently)
 echo '#!/bin/bash' > ./code/testcode.sh <br>
 echo 'for i in ./data/*; do fname=$(basename ${i}); cp ${i} ./data/NEW_${fname} ; done' >> ./code/testcode.sh <br>
 chmod +x ./code/testcode.sh <br>
 <br>
-#New code -- check this into datalad
+#New code -- check this into datalad <br>
 datalad status <br>
 datalad save <br>
 
