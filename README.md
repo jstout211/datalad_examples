@@ -21,33 +21,40 @@ git tag   # List the different versions <br>
 git checkout 1.0.2 <br>
 
 # Datalad storage for new data
-mkdir TESTdatalad  <br>
-cd TESTdatalad <br>
-mkdir data <br>
-cp $(locate *.nii | head -2) ./data  <br>
-ls ./data <br><br>
-datalad create #This won't work as is <br>
-datalad create --force  <br>
-datalad status <br>
-datalad save <br>
+```
+mkdir TESTdatalad  
+cd TESTdatalad 
+mkdir data 
+cp $(locate *.nii | head -2) ./data  
+ls ./data
+```
+```
+datalad create #This won't work as is, unless empty
 
+datalad create --force  
+datalad status 
+datalad save 
+```
 ## Combining Code with datalad  -- this is a suboptimal test (code would typically be a git repo already and can be synced independently)
-git submodule add https://github.com/jstout211/datalad_examples.git code <br>
-datalad status <br>
-datalad save <br>
+```
+git submodule add https://github.com/jstout211/datalad_examples.git code 
+datalad status 
+datalad save 
+```
+```
+echo '#!/bin/bash' > ./code/testcode.sh 
+echo 'for i in ./data/*; do fname=$(basename ${i}); cp ${i} ./data/NEW_${fname} ; done' >> ./code/testcode.sh 
+chmod +x ./code/testcode.sh 
 
-echo '#!/bin/bash' > ./code/testcode.sh <br>
-echo 'for i in ./data/*; do fname=$(basename ${i}); cp ${i} ./data/NEW_${fname} ; done' >> ./code/testcode.sh <br>
-chmod +x ./code/testcode.sh <br>
-<br>
 #New code -- check this into git and datalad <br>
-datalad status <br>
-cd code <br>
-git add testcode.sh <br>
-git commit -m 'New' <br>
-cd .. <br>
-datalad status <br>
-datalad save <br>
+datalad status 
+cd code 
+git add testcode.sh 
+git commit -m 'New' 
+cd .. 
+datalad status 
+datalad save 
+```
 
 ## Run your code 
 ./code/testcode.sh <br>
