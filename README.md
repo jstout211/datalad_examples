@@ -78,7 +78,7 @@ datalad save
 
 ## What if I want to go back to a previous version of the data
 git log 
-git checkout ----- 
+git checkout <<PUT the hash ID>> 
 ```
 
 
@@ -104,7 +104,7 @@ dl.get('./TEST_DATA')
 ```
 
 ## Upload to a git server (NOT GITHUB)
-datalad siblings-create
+datalad siblings-create  #See the instructions on datalad website 
 
 ## Remove datalad tracking
 ```
@@ -116,7 +116,7 @@ rm -rf .git*  .datalad*
 Now you are back to just a regular dataset (no datalad tracking)
 ```
 
-# Reproducible usage for other purposes --- automated test data
+# Example of reproducible usage for other purposes --- automated test data
 https://github.com/nih-megcore/TEST_ctf_data
 
 
