@@ -70,7 +70,16 @@ ls -a <br>
 
 ## Python interface
 These can be embedded into your code, so that the outputs can be saved at runtime <br>
-https://github.com/nih-megcore/enigma_anonymization/blob/main/enigma_preupload/tests/OLD_test_enigma_anonymization.py <br>
+```
+#%% Test data setup
+data_server = os.environ['MEG_DATA_SERVER']  #Get the server name or network address from a bash environmental variable
+testdata = f'{data_server}:/home/git/testdata'
+
+import datalad.api as dl
+dl.clone(testdata, './TEST_DATA')
+dl.get('./TEST_DATA')
+
+```
 
 ## Upload to a git server (NOT GITHUB)
 datalad siblings-create
