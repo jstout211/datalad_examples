@@ -1,11 +1,14 @@
-# datalad_examples
+# Quick datalad_examples
+Full website for much better examples and documentation <br>
+https://www.datalad.org/
+
 
 ## Create an environment and install datalad
 mamba create -n dataladENV datalad -y <br>
 conda activate dataladENV <br>
 
 
-## Pulling data
+# Pulling data with Datalad
 datalad install https://github.com/OpenNeuroDatasets/ds004215.git <br>
 cd ds004215 <br>
 find ./ -name '*T1w.nii.gz'    #Pull all the T1s <br>
@@ -15,7 +18,7 @@ datalad get $(find ./ -name '*T1w.nii.gz') <br>
 git tag   # List the different versions <br>
 git checkout 1.0.2 <br>
 
-## Datalad storage for new data
+# Datalad storage for new data
 mkdir TESTdatalad  <br>
 cd TESTdatalad <br>
 mkdir code <br>
@@ -44,8 +47,7 @@ datalad status <br>
 datalad save <br>
 
 
-## Upload to a git server (NOT GITHUB)
-datalad siblings-create
+
 
 ## Datalad Unlock
 cd data <br>
@@ -54,7 +56,11 @@ datalad unlock * <br>
 ls -a <br>
 
 ## Python interface
-These can be embedded into your code, so that the outputs can be saved at runtime
+These can be embedded into your code, so that the outputs can be saved at runtime <br>
+https://github.com/nih-megcore/enigma_anonymization/blob/main/enigma_preupload/tests/OLD_test_enigma_anonymization.py <br>
+
+## Upload to a git server (NOT GITHUB)
+datalad siblings-create
 
 ## Remove datalad tracking 
 ls -a <br>
