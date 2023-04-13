@@ -1,8 +1,8 @@
 # datalad_examples
 
 ## Create an environment and install datalad
-mamba create -n dataladENV datalad -y
-conda activate dataladENV
+mamba create -n dataladENV datalad -y <br>
+conda activate dataladENV <br>
 
 
 ## Pulling data
@@ -12,36 +12,40 @@ find ./ -name '*T1w.nii.gz'    #Pull all the T1s <br>
 datalad get $(find ./ -name '*T1w.nii.gz') <br>
 
 ## Look at different versions of the data
-git 
+git tag   # List the different versions <br>
+git checkout 1.0.2 <br>
 
-
-## Datalad storage
-https://github.com/nih-megcore/TEST_ctf_data
-
-mkdir TESTdatalad
-cd TESTdatalad
-cp $(locate *.nii | head -2) ./
-datalad create 
-datalad create --force
-datalad status
-datalad save
-#
-
+## Datalad storage for new data
+mkdir TESTdatalad  <br>
+cd TESTdatalad <br>
+mkdir code <br>
+mkdir data <br>
+cp $(locate *.nii | head -2) ./data  <br>
+ls ./data <br><br>
+datalad create #This won't work as is <br>
+datalad create --force  <br>
+datalad status <br>
+datalad save <br>
 
 ## Datalad Unlock
-ln -s 
+cd data <br>
+ls -a <br>
+datalad unlock * <br>
+ls -a <br>
 
+## Python interface
+These can be embedded into your code, so that the outputs can be saved at runtime
 
-# Python interface
-These can be embedded into your code
+## Remove datalad tracking 
+ls -a <br>
 
+datalad unlock   ## This has to be done or you will remove all of your data  <br>
+rm -rf .git*  .datalad* <br><br>
 
-# Remove datalad tracking 
-ls -a
-
-datalad unlock   ## This has to be done or you will remove all of your data
-rm -rf .git*  .datalad*
-
+Now you are back to just a regular dataset (no datalad tracking) <br>
 
 # Reproducible usage for other purposes --- automated test data
 https://github.com/nih-megcore/TEST_ctf_data
+
+
+
