@@ -40,18 +40,26 @@ echo '#!/bin/bash' > ./code/testcode.sh <br>
 echo 'for i in ./data/*; do fname=$(basename ${i}); cp ${i} ./data/NEW_${fname} ; done' >> ./code/testcode.sh <br>
 chmod +x ./code/testcode.sh <br>
 <br>
-#New code -- check this into datalad <br>
+#New code -- check this into git and datalad <br>
+datalad status <br>
+cd code <br>
+git add testcode.sh <br>
+git commit -m 'New' <br>
+cd .. <br>
 datalad status <br>
 datalad save <br>
 
-## Run your code
+## Run your code 
 ./code/testcode.sh <br>
 <br>
 #The datalad repository has now changed <br>
 datalad status <br>
-datalad save <br>
+#Now the code and new data will be saved together
+datalad save <br><br>
 
-
+## What if I want to go back to a previous version of the data
+git log <br>
+git checkout ----- <br>
 
 
 ## Datalad Unlock
