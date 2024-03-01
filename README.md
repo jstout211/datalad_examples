@@ -15,7 +15,7 @@ mamba create -n dataladENV conda-forge::datalad -y
 conda activate dataladENV 
 ```
 
-# THIS IS NOT SARCASM - check out openneuro
+# check out openneuro
 https://openneuro.org/
 
 # Pulling some example data with Datalad
