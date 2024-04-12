@@ -104,7 +104,9 @@ dl.get('./TEST_DATA')
 ```
 
 ## Upload to a git server (NOT GITHUB)
-datalad siblings-create -s <NAME>  <Address to MEG SERVER/Folder> #See the instructions on datalad website 
+#datalad create --force
+#datalad save
+datalad siblings-create -s <NAME>  <USERNAME@MEG_SERVER:Folder> 
 datalad push --to <NAME>
 
 ## Remove datalad tracking
