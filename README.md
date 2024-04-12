@@ -104,7 +104,8 @@ dl.get('./TEST_DATA')
 ```
 
 ## Upload to a git server (NOT GITHUB)
-datalad siblings-create  #See the instructions on datalad website 
+datalad siblings-create -s <NAME>  <Address to MEG SERVER/Folder> #See the instructions on datalad website 
+datalad push --to <NAME>
 
 ## Remove datalad tracking
 ```
