@@ -104,10 +104,12 @@ dl.get('./TEST_DATA')
 ```
 
 ## Upload to a git server (NOT GITHUB)
+```
 #datalad create --force
 #datalad save
 datalad siblings-create -s <NAME>  <USERNAME@MEG_SERVER:Folder> 
 datalad push --to <NAME>
+```
 
 ## Remove datalad tracking
 ```
