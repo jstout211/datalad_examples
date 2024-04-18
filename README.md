@@ -107,8 +107,9 @@ dl.get('./TEST_DATA')
 ```
 #datalad create --force
 #datalad save
-datalad siblings-create -s <NAME>  <USERNAME@MEG_SERVER:Folder> 
-datalad push --to <NAME>
+datalad siblings-create -r -s <NAME>  <USERNAME@MEG_SERVER:Folder>   #The -r is necessary if you have submodules (this is common)
+datalad push -r --to <NAME>
+#datalad push -r --to <NAME> -f all -data anything    << If the above doens't push what you want Try this
 ```
 
 ## Remove datalad tracking
