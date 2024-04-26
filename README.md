@@ -111,6 +111,11 @@ datalad siblings-create -r -s <NAME>  <USERNAME@MEG_SERVER:Folder>   #The -r is 
 datalad push -r --to <NAME>
 #datalad push -r --to <NAME> -f all -data anything    << If the above doens't push what you want Try this
 ```
+## Syncing w/ server
+```
+datalad update --merge -r
+datalad get ./* -r 
+```
 
 ## Remove datalad tracking
 ```
